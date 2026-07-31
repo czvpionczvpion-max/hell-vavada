@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css" />
-    <title>HELL x VAVADA </title>
+    <title>HELL x VAVADA — Kod HELL</title>
   </head>
   <body>
     <div class="app-shell">
@@ -31,7 +31,7 @@
         </a>
 
         <div class="topbar-actions">
-          <a href="#" data-partner-link target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" data-i18n="joinPartner">Join VAVADA</a>
+          <a href="#" data-partner-link target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" data-i18n="joinPartner">ODBIERZ BONUSY</a>
           <div class="lang-toggle">
             <button type="button" data-lang="en" class="active">EN</button>
             <button type="button" data-lang="pl">PL</button>
@@ -42,10 +42,14 @@
       <main class="page">
         <section class="hero">
           <div class="reveal in">
-            <h1 class="hero-title">
-              <span data-i18n="heroTitle">HELL</span> <span class="title-grad" data-i18n="heroAccent">x VAVADA</span>
-            </h1>
+            <div class="hero-logo-wrap">
+              <img id="hero-partner-logo" src="assets/vavada-logo.webp" alt="VAVADA" class="hero-partner-logo" />
+            </div>
             <p class="hero-lead" data-i18n="heroTagline"></p>
+
+            <div class="hero-cta">
+              <a href="#" data-partner-link target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg btn-claim" data-i18n="joinPartner">ODBIERZ BONUSY</a>
+            </div>
 
             <div class="promo-code-box reveal in">
               <span class="promo-code-label" data-i18n="promoCodeLabel">Promo code</span>
@@ -53,16 +57,6 @@
                 <span class="promo-code-value" data-promo-code>HELL</span>
                 <button type="button" class="btn btn-primary btn-sm" data-copy-promo data-i18n="copyPromo">Copy code</button>
               </div>
-            </div>
-
-            <div class="reflink">
-              <span class="reflink-url" data-ref-url></span>
-              <button type="button" class="btn btn-primary btn-sm" data-copy-link data-i18n="copyCode">Copy link</button>
-            </div>
-
-            <div class="hero-cta">
-              <a href="#" data-partner-link target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg" data-i18n="joinPartner">Join VAVADA</a>
-              <button type="button" class="btn btn-ghost btn-lg" data-copy-link data-i18n="secondaryCta">Copy link</button>
             </div>
 
             <div class="hero-pills" id="hero-pills"></div>
@@ -80,6 +74,21 @@
         <section class="strip reveal in" id="stats-strip"></section>
 
         <section class="block">
+          <div class="bonus-duo">
+            <div class="bonus-card bonus-card-hell reveal in">
+              <span class="bonus-card-tag" data-i18n="bonusHellTag">Promo HELL</span>
+              <h3 class="bonus-card-title" data-i18n="bonusHellTitle">20 FS · Gates of Olympus 1000</h3>
+              <p class="bonus-card-text" data-i18n="bonusHellText"></p>
+            </div>
+            <div class="bonus-card bonus-card-welcome reveal in" style="transition-delay: 90ms">
+              <span class="bonus-card-tag" data-i18n="bonusWelcomeTag">New player</span>
+              <h3 class="bonus-card-title" data-i18n="bonusWelcomeTitle">100% + 100 FS · The Dog House</h3>
+              <p class="bonus-card-text" data-i18n="bonusWelcomeText"></p>
+            </div>
+          </div>
+        </section>
+
+        <section class="block">
           <div class="block-head reveal in">
             <span class="eyebrow" data-i18n="promoLabel">Your promo</span>
             <h2 class="block-title" data-i18n="promoTitle">HELL — exclusive VAVADA offer</h2>
@@ -91,7 +100,7 @@
         <section class="block">
           <div class="block-head reveal in">
             <span class="eyebrow" data-i18n="benefitsLabel">Why VAVADA</span>
-            <h2 class="block-title" data-i18n="benefitsTitle">Perks through hell’s link</h2>
+            <h2 class="block-title" data-i18n="benefitsTitle">Perks with code HELL</h2>
             <p class="block-sub" data-i18n="benefitsSubtitle"></p>
           </div>
 
@@ -101,29 +110,19 @@
         <section class="block">
           <div class="block-head reveal in">
             <span class="eyebrow" data-i18n="stepsLabel">Start here</span>
-            <h2 class="block-title" data-i18n="stepsTitle">How to join VAVADA</h2>
+            <h2 class="block-title" data-i18n="stepsTitle">How to claim bonuses</h2>
           </div>
           <div class="timeline" id="steps-timeline"></div>
 
           <div class="hero-cta reveal in" style="margin-top: 2rem">
-            <a href="#" data-partner-link target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg" data-i18n="joinPartner">Join VAVADA</a>
-            <button type="button" class="btn btn-ghost btn-lg" data-copy-link data-i18n="secondaryCta">Copy link</button>
+            <a href="#" data-partner-link target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg btn-claim" data-i18n="joinPartner">ODBIERZ BONUSY</a>
           </div>
-        </section>
-
-        <section class="block">
-
-              <div>
-
-              </div>
-            </div>
-          </div>
-          <p class="legal-inline reveal in" data-i18n="legalNote">18+ only. Gamble responsibly.</p>
         </section>
       </main>
 
       <footer class="footer">
-        <div>© <span id="footer-year"></span> <span data-brand>HELL</span> × VAVADA — <span data-i18n="heroLabel"></span></div>
+        <div>© <span id="footer-year"></span> <span data-brand>HELL</span> × VAVADA</div>
+        <p class="footer-legal" data-i18n="legalNote">18+ only. Gamble responsibly.</p>
         <a href="privacy.html" data-i18n="privacyPolicy">Privacy policy</a>
       </footer>
     </div>

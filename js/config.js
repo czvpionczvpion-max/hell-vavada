@@ -1,6 +1,6 @@
 /** Uzupełnij te wartości własnymi linkami i plikami. */
 const CONFIG = {
-  brand: 'hell',
+  brand: 'HELL',
 
   partner: {
     name: 'VAVADA',

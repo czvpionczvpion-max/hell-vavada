@@ -2,9 +2,7 @@
   'use strict';
 
   let lang = localStorage.getItem('lang') || 'en';
-  let copiedLink = false;
   let copiedPromo = false;
-  let copyLinkTimeout = null;
   let copyPromoTimeout = null;
 
   function t() {
@@ -99,31 +97,11 @@
 
   function updateCopyButtons() {
     const tr = t();
-    document.querySelectorAll('[data-copy-link]').forEach((btn) => {
-      const key = btn.getAttribute('data-i18n');
-      const label = key && tr[key] ? tr[key] : tr.copyCode;
-      btn.textContent = copiedLink ? tr.copiedCode : label;
-    });
     document.querySelectorAll('[data-copy-promo]').forEach((btn) => {
       const key = btn.getAttribute('data-i18n');
       const label = key && tr[key] ? tr[key] : tr.copyPromo;
       btn.textContent = copiedPromo ? tr.copiedPromo : label;
     });
-  }
-
-  async function handleCopyLink() {
-    try {
-      await navigator.clipboard.writeText(CONFIG.partner.siteUrl);
-      copiedLink = true;
-      updateCopyButtons();
-      clearTimeout(copyLinkTimeout);
-      copyLinkTimeout = setTimeout(() => {
-        copiedLink = false;
-        updateCopyButtons();
-      }, 1600);
-    } catch {
-      /* noop */
-    }
   }
 
   async function handleCopyPromo() {
@@ -165,9 +143,6 @@
     document.querySelectorAll('[data-brand]').forEach((el) => {
       el.textContent = CONFIG.brand;
     });
-    document.querySelectorAll('[data-ref-url]').forEach((el) => {
-      el.textContent = CONFIG.partner.siteUrl;
-    });
     document.querySelectorAll('[data-partner-link]').forEach((el) => {
       el.href = CONFIG.partner.siteUrl;
     });
@@ -179,6 +154,12 @@
     if (partnerLogo) {
       partnerLogo.src = CONFIG.partner.logoPath;
       partnerLogo.alt = CONFIG.partner.name;
+    }
+
+    const heroPartnerLogo = document.getElementById('hero-partner-logo');
+    if (heroPartnerLogo) {
+      heroPartnerLogo.src = CONFIG.partner.logoPath;
+      heroPartnerLogo.alt = CONFIG.partner.name;
     }
 
     const heroPhoto = document.getElementById('hero-photo');
@@ -199,9 +180,6 @@
   function bindEvents() {
     document.querySelectorAll('.lang-toggle button').forEach((btn) => {
       btn.addEventListener('click', () => setLang(btn.dataset.lang));
-    });
-    document.querySelectorAll('[data-copy-link]').forEach((btn) => {
-      btn.addEventListener('click', handleCopyLink);
     });
     document.querySelectorAll('[data-copy-promo]').forEach((btn) => {
       btn.addEventListener('click', handleCopyPromo);
