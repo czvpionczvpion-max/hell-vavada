@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>HELL x VAVADA </title>
+  </head>
+  <body>
+    <div class="app-shell">
+      <div class="bg-decor" aria-hidden="true">
+        <span class="glow glow-a"></span>
+        <span class="glow glow-b"></span>
+        <span class="glow glow-c"></span>
+        <span class="ember ember-1"></span>
+        <span class="ember ember-2"></span>
+        <span class="ember ember-3"></span>
+        <span class="ember ember-4"></span>
+        <span class="ember ember-5"></span>
+      </div>
+
+      <header class="topbar">
+        <a href="index.html" class="topbar-brand">
+          <span class="topbar-name" data-brand>HELL</span>
+          <span class="topbar-x">×</span>
+          <img id="partner-logo" src="assets/vavada-logo.webp" alt="VAVADA" class="topbar-partner" />
+        </a>
+
+        <div class="topbar-actions">
+          <a href="#" data-partner-link target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" data-i18n="joinPartner">Join VAVADA</a>
+          <div class="lang-toggle">
+            <button type="button" data-lang="en" class="active">EN</button>
+            <button type="button" data-lang="pl">PL</button>
+          </div>
+        </div>
+      </header>
+
+      <main class="page">
+        <section class="hero">
+          <div class="reveal in">
+            <h1 class="hero-title">
+              <span data-i18n="heroTitle">HELL</span> <span class="title-grad" data-i18n="heroAccent">x VAVADA</span>
+            </h1>
+            <p class="hero-lead" data-i18n="heroTagline"></p>
+
+            <div class="promo-code-box reveal in">
+              <span class="promo-code-label" data-i18n="promoCodeLabel">Promo code</span>
+              <div class="promo-code-row">
+                <span class="promo-code-value" data-promo-code>HELL</span>
+                <button type="button" class="btn btn-primary btn-sm" data-copy-promo data-i18n="copyPromo">Copy code</button>
+              </div>
+            </div>
+
+            <div class="reflink">
+              <span class="reflink-url" data-ref-url></span>
+              <button type="button" class="btn btn-primary btn-sm" data-copy-link data-i18n="copyCode">Copy link</button>
+            </div>
+
+            <div class="hero-cta">
+              <a href="#" data-partner-link target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg" data-i18n="joinPartner">Join VAVADA</a>
+              <button type="button" class="btn btn-ghost btn-lg" data-copy-link data-i18n="secondaryCta">Copy link</button>
+            </div>
+
+            <div class="hero-pills" id="hero-pills"></div>
+          </div>
+
+          <div class="orb-wrap reveal in" style="transition-delay: 120ms">
+            <div class="orb">
+              <img id="hero-photo" src="assets/hell-photo.png" alt="hell" class="orb-photo" />
+              <span class="orb-ring"></span>
+              <span class="orb-flame" aria-hidden="true">🔥</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="strip reveal in" id="stats-strip"></section>
+
+        <section class="block">
+          <div class="block-head reveal in">
+            <span class="eyebrow" data-i18n="promoLabel">Your promo</span>
+            <h2 class="block-title" data-i18n="promoTitle">HELL — exclusive VAVADA offer</h2>
+            <p class="block-sub" data-i18n="promoSubtitle"></p>
+          </div>
+          <div class="promo-details" id="promo-details"></div>
+        </section>
+
+        <section class="block">
+          <div class="block-head reveal in">
+            <span class="eyebrow" data-i18n="benefitsLabel">Why VAVADA</span>
+            <h2 class="block-title" data-i18n="benefitsTitle">Perks through hell’s link</h2>
+            <p class="block-sub" data-i18n="benefitsSubtitle"></p>
+          </div>
+
+          <div class="benefits-grid" id="benefits-grid"></div>
+        </section>
+
+        <section class="block">
+          <div class="block-head reveal in">
+            <span class="eyebrow" data-i18n="stepsLabel">Start here</span>
+            <h2 class="block-title" data-i18n="stepsTitle">How to join VAVADA</h2>
+          </div>
+          <div class="timeline" id="steps-timeline"></div>
+
+          <div class="hero-cta reveal in" style="margin-top: 2rem">
+            <a href="#" data-partner-link target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg" data-i18n="joinPartner">Join VAVADA</a>
+            <button type="button" class="btn btn-ghost btn-lg" data-copy-link data-i18n="secondaryCta">Copy link</button>
+          </div>
+        </section>
+
+        <section class="block">
+
+              <div>
+
+              </div>
+            </div>
+          </div>
+          <p class="legal-inline reveal in" data-i18n="legalNote">18+ only. Gamble responsibly.</p>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div>© <span id="footer-year"></span> <span data-brand>HELL</span> × VAVADA — <span data-i18n="heroLabel"></span></div>
+        <a href="privacy.html" data-i18n="privacyPolicy">Privacy policy</a>
+      </footer>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/translations.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

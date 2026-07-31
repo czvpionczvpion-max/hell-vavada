@@ -1,0 +1,168 @@
+const translations = {
+  en: {
+    heroLabel: 'Official partner — VAVADA',
+    heroTitle: 'hell',
+    heroAccent: 'x VAVADA',
+    heroTagline:
+      'Register at VAVADA through hell’s link and enter promo code HELL to unlock 20 free spins on Gates of Olympus 1000.',
+    secondaryCta: 'Copy link',
+    copyPromo: 'Copy code',
+    copiedPromo: 'Code copied!',
+    promoCodeLabel: 'Promo code',
+    quickPills: ['Code: HELL', '20 free spins', 'Gates of Olympus 1000', '30 activations'],
+    promoCodeNote:
+      'Required: enter promo code HELL during registration. Limited to 30 activations — don’t miss out.',
+    copyCode: 'Copy link',
+    copiedCode: 'Copied!',
+    stepsLabel: 'Start here',
+    stepsTitle: 'How to claim the HELL promo',
+    steps: [
+      'Click hell’s VAVADA registration link.',
+      'Enter promo code HELL when signing up.',
+      'Complete registration — currency PLN.',
+      'Receive 20 free spins on Gates of Olympus 1000 (x20 wager).',
+    ],
+    privacyPolicy: 'Privacy policy',
+    legalNote: '18+ only. Gamble responsibly.',
+    joinPartner: 'Join VAVADA',
+    stats: [
+      { label: 'Promo code', value: 'HELL' },
+      { label: 'Free spins', value: '20 FS' },
+      { label: 'Slot', value: 'Gates of Olympus 1000' },
+      { label: 'Wager', value: 'x20' },
+    ],
+    promoLabel: 'Your promo',
+    promoTitle: 'HELL — exclusive VAVADA offer',
+    promoSubtitle:
+      'hell’s personal promo for VAVADA. Enter code HELL at registration — limited to 30 activations.',
+    promoDetails: [
+      { label: 'Promo code', value: 'HELL' },
+      { label: 'Activations', value: '30' },
+      { label: 'Slot', value: 'Gates of Olympus 1000' },
+      { label: 'Free spins', value: '20 FS' },
+      { label: 'Wager', value: 'x20' },
+      { label: 'Currency', value: 'PLN' },
+    ],
+    benefitsLabel: 'Why VAVADA',
+    benefitsTitle: 'Perks with code HELL',
+    benefitsSubtitle:
+      'Sign up via hell’s link, enter HELL at registration, and get access to one of the most popular online casinos.',
+    benefits: [
+      {
+        icon: '🔥',
+        title: 'HELL — your promo',
+        text: 'Exclusive hell promo code. Enter HELL at registration — only 30 activations available.',
+      },
+      {
+        icon: '🎰',
+        title: 'Gates of Olympus 1000',
+        text: '20 free spins on the Gates of Olympus 1000 slot — one of the hottest games on VAVADA.',
+      },
+      {
+        icon: '🎁',
+        title: '20 FS · x20 wager',
+        text: 'Get 20 free spins with a x20 wagering requirement. Full promo terms apply on VAVADA.',
+      },
+      {
+        icon: '⚡',
+        title: 'Fast withdrawals',
+        text: 'Quick payout processing — crypto and traditional methods supported.',
+      },
+      {
+        icon: '🏆',
+        title: '5,000+ games',
+        text: 'Slots, live casino, crash games, and table classics from top providers.',
+      },
+      {
+        icon: '📱',
+        title: 'Play anywhere',
+        text: 'Fully optimized for mobile and desktop — play from anywhere, anytime.',
+      },
+    ],
+    hellBadge: 'Powered by hell',
+    hellTagline: 'Stream · Community · Code HELL',
+  },
+  pl: {
+    heroLabel: 'Oficjalny partner — VAVADA',
+    heroTitle: 'hell',
+    heroAccent: 'x VAVADA',
+    heroTagline:
+      'Zarejestruj się na VAVADA przez link hell i wpisz kod promo HELL, żeby dostać 20 darmowych spinów na Gates of Olympus 1000.',
+    secondaryCta: 'Skopiuj link',
+    copyPromo: 'Kopiuj kod',
+    copiedPromo: 'Kod skopiowany!',
+    promoCodeLabel: 'Kod promo',
+    quickPills: ['Kod: HELL', '20 darmowych spinów', 'Gates of Olympus 1000', '30 aktywacji'],
+    promoCodeNote:
+      'Wymagane: wpisz kod promo HELL przy rejestracji. Limit 30 aktywacji — nie przegap.',
+    copyCode: 'Kopiuj link',
+    copiedCode: 'Skopiowano!',
+    stepsLabel: 'Start tutaj',
+    stepsTitle: 'Jak odebrać promkę HELL',
+    steps: [
+      'Kliknij link rejestracyjny hell do VAVADA.',
+      'Wpisz kod promo HELL przy zakładaniu konta.',
+      'Dokończ rejestrację — waluta PLN.',
+      'Odbierz 20 darmowych spinów na Gates of Olympus 1000 (obrót x20).',
+    ],
+    privacyPolicy: 'Polityka prywatności',
+    legalNote: '18+ only. Graj odpowiedzialnie.',
+    joinPartner: 'Dołącz do VAVADA',
+    stats: [
+      { label: 'Kod promo', value: 'HELL' },
+      { label: 'Darmowe spiny', value: '20 FS' },
+      { label: 'Slot', value: 'Gates of Olympus 1000' },
+      { label: 'Obrót', value: 'x20' },
+    ],
+    promoLabel: 'Twoja promka',
+    promoTitle: 'HELL — ekskluzywna oferta VAVADA',
+    promoSubtitle:
+      'Osobista promka hell na VAVADA. Wpisz kod HELL przy rejestracji — limit 30 aktywacji.',
+    promoDetails: [
+      { label: 'Kod promo', value: 'HELL' },
+      { label: 'Aktywacje', value: '30' },
+      { label: 'Slot', value: 'Gates of Olympus 1000' },
+      { label: 'Darmowe spiny', value: '20 FS' },
+      { label: 'Obrót', value: 'x20' },
+      { label: 'Waluta', value: 'PLN' },
+    ],
+    benefitsLabel: 'Dlaczego VAVADA',
+    benefitsTitle: 'Korzyści z kodem HELL',
+    benefitsSubtitle:
+      'Zarejestruj się przez link hell, wpisz HELL przy rejestracji i zyskaj dostęp do jednego z najpopularniejszych kasyn online.',
+    benefits: [
+      {
+        icon: '🔥',
+        title: 'HELL — twoja promka',
+        text: 'Ekskluzywny kod promo hell. Wpisz HELL przy rejestracji — dostępne tylko 30 aktywacji.',
+      },
+      {
+        icon: '🎰',
+        title: 'Gates of Olympus 1000',
+        text: '20 darmowych spinów na slocie Gates of Olympus 1000 — jeden z najgorętszych slotów na VAVADA.',
+      },
+      {
+        icon: '🎁',
+        title: '20 FS · obrót x20',
+        text: '20 darmowych spinów z wymogiem obrotu x20. Pełne warunki promocji obowiązują na VAVADA.',
+      },
+      {
+        icon: '⚡',
+        title: 'Szybkie wypłaty',
+        text: 'Szybka obsługa wypłat — krypto i tradycyjne metody płatności.',
+      },
+      {
+        icon: '🏆',
+        title: '5000+ gier',
+        text: 'Sloty, live casino, crash i klasyki stołowe od topowych providerów.',
+      },
+      {
+        icon: '📱',
+        title: 'Graj wszędzie',
+        text: 'Pełna optymalizacja pod mobile i desktop — graj skąd chcesz, kiedy chcesz.',
+      },
+    ],
+    hellBadge: 'Powered by hell',
+    hellTagline: 'Stream · Społeczność · Kod HELL',
+  },
+};

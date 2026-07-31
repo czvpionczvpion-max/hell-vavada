@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Polityka prywatności — hell</title>
+  </head>
+  <body>
+    <div class="app-shell">
+      <div class="bg-decor" aria-hidden="true">
+        <span class="glow glow-a"></span>
+        <span class="glow glow-b"></span>
+        <span class="glow glow-c"></span>
+      </div>
+
+      <header class="topbar">
+        <a href="index.html" class="topbar-brand">
+          <span class="topbar-name">hell</span>
+        </a>
+      </header>
+
+      <main class="privacy-page">
+        <h1>Polityka prywatności</h1>
+        <p class="privacy-sub">hell — Live Stream &amp; Partners</p>
+
+        <div class="privacy-content">
+          <h2>1. Informacje ogólne</h2>
+          <p>
+            Niniejsza Polityka Prywatności określa zasady przetwarzania i ochrony danych osobowych
+            przekazanych przez Użytkowników w związku z korzystaniem z serwisu hell.
+          </p>
+
+          <h2>2. Administrator danych</h2>
+          <p>
+            Administratorem danych osobowych jest hell. W sprawach dotyczących przetwarzania
+            danych osobowych można się z nami skontaktować poprzez Discord:
+            <a id="privacy-discord" href="https://discord.gg/k8BtDG8ZB2">https://discord.gg/k8BtDG8ZB2</a>
+          </p>
+
+          <h2>3. Pliki cookies</h2>
+          <p>
+            Serwis wykorzystuje pliki cookies w celu zapewnienia prawidłowego funkcjonowania strony
+            oraz do celów analitycznych i reklamowych. Cookies to małe pliki tekstowe przechowywane
+            na urzędzeniu użytkownika.
+          </p>
+
+          <h2>4. Google AdSense</h2>
+          <p>
+            Nasza strona może wykorzystywać Google AdSense, usługę reklamową Google LLC. Google AdSense
+            może wykorzystywać pliki cookies do wyświetlania reklam dostosowanych do preferencji
+            użytkownika. Więcej informacji:
+            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Polityka prywatności Google</a>.
+          </p>
+
+          <h2>5. Dane zbierane automatycznie</h2>
+          <p>Podczas korzystania z serwisu mogą być zbierane następujące dane:</p>
+          <ul>
+            <li>Adres IP</li>
+            <li>Typ przeglądarki i wersja</li>
+            <li>System operacyjny</li>
+            <li>Strona, z której użytkownik trafił na naszą stronę</li>
+            <li>Strony odwiedzane na naszej witrynie</li>
+            <li>Data i godzina wizyty</li>
+          </ul>
+
+          <h2>6. Cele przetwarzania danych</h2>
+          <ul>
+            <li>Zapewnienie prawidłowego funkcjonowania serwisu</li>
+            <li>Analiza ruchu na stronie</li>
+            <li>Wyświetlanie reklam dostosowanych do preferencji użytkownika</li>
+            <li>Poprawa jakości świadczonych usług</li>
+          </ul>
+
+          <h2>7. Prawa użytkownika</h2>
+          <p>Użytkownik ma prawo do:</p>
+          <ul>
+            <li>Dostępu do swoich danych osobowych</li>
+            <li>Sprostowania nieprawidłowych danych</li>
+            <li>Usunięcia danych osobowych</li>
+            <li>Ograniczenia przetwarzania</li>
+            <li>Przenoszenia danych</li>
+            <li>Sprzeciwu wobec przetwarzania</li>
+          </ul>
+
+          <h2>8. Bezpieczeństwo danych</h2>
+          <p>
+            Stosujemy odpowiednie środki techniczne i organizacyjne w celu ochrony danych osobowych
+            przed nieuprawnionym dostępem, utratą, zniszczeniem lub modyfikacją.
+          </p>
+
+          <h2>9. Zmiany w polityce prywatności</h2>
+          <p>
+            Zastrzegamy sobie prawo do wprowadzania zmian w niniejszej Polityce Prywatności.
+            O wszelkich zmianach użytkownicy będą informowani poprzez aktualizację tej strony.
+          </p>
+
+          <h2>10. Kontakt</h2>
+          <p>
+            W przypadku pytań dotyczących niniejszej Polityki Prywatności prosimy o kontakt
+            poprzez nasz serwer Discord:
+            <a id="privacy-discord-2" href="https://discord.gg/k8BtDG8ZB2">https://discord.gg/k8BtDG8ZB2</a>
+          </p>
+
+          <p style="font-size: 0.85rem; color: var(--muted); margin-top: 2rem">
+            Ostatnia aktualizacja: <span id="privacy-date"></span>
+          </p>
+        </div>
+
+        <div class="privacy-back">
+          <a href="index.html" class="btn btn-primary btn-lg">← Powrót do strony głównej</a>
+        </div>
+      </main>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script>
+      document.getElementById('privacy-date').textContent = new Date().toLocaleDateString('pl-PL');
+      document.querySelectorAll('#privacy-discord, #privacy-discord-2').forEach((a) => {
+        a.href = CONFIG.discordUrl;
+        a.textContent = CONFIG.discordUrl;
+      });
+    </script>
+  </body>
+</html>
