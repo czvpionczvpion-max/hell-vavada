@@ -31,7 +31,10 @@
         </a>
 
         <div class="topbar-actions">
-          <a href="#" data-partner-link target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" data-i18n="joinPartner">ODBIERZ BONUSY</a>
+          <a href="#" data-partner-link target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm btn-claim btn-claim--sm">
+            <span data-i18n="joinPartner">ODBIERZ BONUSY</span>
+            <span class="btn-arrow" aria-hidden="true">→</span>
+          </a>
           <div class="lang-toggle">
             <button type="button" data-lang="en" class="active">EN</button>
             <button type="button" data-lang="pl">PL</button>
@@ -41,17 +44,27 @@
 
       <main class="page">
         <section class="hero">
-          <div class="reveal in">
+          <div class="hero-stack reveal in">
             <div class="hero-logo-wrap">
               <img id="hero-partner-logo" src="assets/vavada-logo.webp" alt="VAVADA" class="hero-partner-logo" />
             </div>
+
+            <span class="flow-arrow" aria-hidden="true"></span>
+
             <p class="hero-lead" data-i18n="heroTagline"></p>
 
+            <span class="flow-arrow" aria-hidden="true"></span>
+
             <div class="hero-cta">
-              <a href="#" data-partner-link target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg btn-claim" data-i18n="joinPartner">ODBIERZ BONUSY</a>
+              <a href="#" data-partner-link target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg btn-claim">
+                <span data-i18n="joinPartner">ODBIERZ BONUSY</span>
+                <span class="btn-arrow" aria-hidden="true">→</span>
+              </a>
             </div>
 
-            <div class="promo-code-box reveal in">
+            <span class="flow-arrow flow-arrow--muted" aria-hidden="true"></span>
+
+            <div class="promo-code-box">
               <span class="promo-code-label" data-i18n="promoCodeLabel">Promo code</span>
               <div class="promo-code-row">
                 <span class="promo-code-value" data-promo-code>HELL</span>
@@ -73,12 +86,19 @@
 
         <section class="strip reveal in" id="stats-strip"></section>
 
-        <section class="block">
+        <div class="section-flow reveal in" aria-hidden="true">
+          <span class="flow-arrow"></span>
+        </div>
+
+        <section class="block block--tight">
           <div class="bonus-duo">
             <div class="bonus-card bonus-card-hell reveal in">
               <span class="bonus-card-tag" data-i18n="bonusHellTag">Promo HELL</span>
               <h3 class="bonus-card-title" data-i18n="bonusHellTitle">20 FS · Gates of Olympus 1000</h3>
               <p class="bonus-card-text" data-i18n="bonusHellText"></p>
+            </div>
+            <div class="bonus-duo-connector" aria-hidden="true">
+              <span class="flow-arrow flow-arrow--right"></span>
             </div>
             <div class="bonus-card bonus-card-welcome reveal in" style="transition-delay: 90ms">
               <span class="bonus-card-tag" data-i18n="bonusWelcomeTag">New player</span>
@@ -114,8 +134,11 @@
           </div>
           <div class="timeline" id="steps-timeline"></div>
 
-          <div class="hero-cta reveal in" style="margin-top: 2rem">
-            <a href="#" data-partner-link target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg btn-claim" data-i18n="joinPartner">ODBIERZ BONUSY</a>
+          <div class="hero-cta reveal in hero-cta--steps">
+            <a href="#" data-partner-link target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg btn-claim">
+              <span data-i18n="joinPartner">ODBIERZ BONUSY</span>
+              <span class="btn-arrow" aria-hidden="true">→</span>
+            </a>
           </div>
         </section>
       </main>
