@@ -90,9 +90,7 @@
       `,
         )
         .join('');
-      timeline.innerHTML =
-        stepsHtml +
-        `<div class="tstep reveal tstep-warn"><span class="tstep-n">!</span><p>${tr.promoCodeNote}</p></div>`;
+      timeline.innerHTML = stepsHtml;
     }
 
     updateCopyButtons();

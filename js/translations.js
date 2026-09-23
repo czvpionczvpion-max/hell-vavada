@@ -6,9 +6,8 @@ const translations = {
     copyPromo: 'Copy code',
     copiedPromo: 'Copied!',
     promoCodeLabel: 'Your code',
-    quickPills: ['Code HELLBOY', '20 FS · Gates of Olympus 1000', '100% welcome · The Dog House', '30 activations'],
-    promoCodeNote:
-      'Required: enter promo code HELLBOY during registration. Limited to 30 activations.',
+    quickPills: ['Code HELLBOY', '20 FS · Gates of Olympus 1000', '100% welcome · The Dog House'],
+    promoCodeNote: 'Enter promo code HELLBOY during registration.',
     stepsLabel: 'Start here',
     stepsTitle: 'How to claim bonuses',
     steps: [
@@ -32,7 +31,7 @@ const translations = {
     bonusHellGame: 'Gates of Olympus 1000',
     bonusHellTitle: '20 FS · Gates of Olympus 1000',
     bonusHellText:
-      'Enter code HELLBOY at registration — 20 free spins on Gates of Olympus 1000, x20 wager. Limited to 30 activations.',
+      'Enter code HELLBOY at registration — 20 free spins on Gates of Olympus 1000, x20 wager.',
     bonusWelcomeTag: 'New player',
     bonusWelcomePrize: '100%',
     bonusWelcomeFs: '100 FS',
@@ -43,10 +42,9 @@ const translations = {
     promoLabel: 'Your promo',
     promoTitle: 'HELLBOY — exclusive VAVADA offer',
     promoSubtitle:
-      'Enter code HELLBOY at registration. Limited to 30 activations.',
+      'Enter code HELLBOY at registration.',
     promoDetails: [
       { label: 'Promo code', value: 'HELLBOY' },
-      { label: 'Activations', value: '30' },
       { label: 'HELLBOY slot', value: 'Gates of Olympus 1000' },
       { label: 'HELLBOY free spins', value: '20 FS · x20' },
       { label: 'Welcome bonus', value: '100% up to $1000' },
@@ -60,7 +58,7 @@ const translations = {
       {
         icon: 'devil',
         title: 'HELLBOY promo',
-        text: 'Exclusive code. Enter HELLBOY at registration — only 30 activations.',
+        text: 'Exclusive code. Enter HELLBOY at registration.',
       },
       {
         icon: 'slot',
@@ -96,9 +94,8 @@ const translations = {
     copyPromo: 'Kopiuj kod',
     copiedPromo: 'Skopiowane!',
     promoCodeLabel: 'Twój kod',
-    quickPills: ['Kod HELLBOY', '20 FS · Gates of Olympus 1000', '100% powitalny · The Dog House', '30 aktywacji'],
-    promoCodeNote:
-      'Wymagane: wpisz kod HELLBOY przy rejestracji. Limit 30 aktywacji.',
+    quickPills: ['Kod HELLBOY', '20 FS · Gates of Olympus 1000', '100% powitalny · The Dog House'],
+    promoCodeNote: 'Wpisz kod HELLBOY przy rejestracji.',
     stepsLabel: 'Start tutaj',
     stepsTitle: 'Jak odebrać bonusy',
     steps: [
@@ -122,7 +119,7 @@ const translations = {
     bonusHellGame: 'Gates of Olympus 1000',
     bonusHellTitle: '20 FS · Gates of Olympus 1000',
     bonusHellText:
-      'Wpisz kod HELLBOY przy rejestracji — 20 darmowych spinów na Gates of Olympus 1000, obrót x20. Limit 30 aktywacji.',
+      'Wpisz kod HELLBOY przy rejestracji — 20 darmowych spinów na Gates of Olympus 1000, obrót x20.',
     bonusWelcomeTag: 'Nowy gracz',
     bonusWelcomePrize: '100%',
     bonusWelcomeFs: '100 FS',
@@ -133,10 +130,9 @@ const translations = {
     promoLabel: 'Twoja promka',
     promoTitle: 'HELLBOY — ekskluzywna oferta VAVADA',
     promoSubtitle:
-      'Wpisz kod HELLBOY przy rejestracji. Limit 30 aktywacji.',
+      'Wpisz kod HELLBOY przy rejestracji.',
     promoDetails: [
       { label: 'Kod promo', value: 'HELLBOY' },
-      { label: 'Aktywacje', value: '30' },
       { label: 'Slot HELLBOY', value: 'Gates of Olympus 1000' },
       { label: 'Spiny HELLBOY', value: '20 FS · x20' },
       { label: 'Bonus powitalny', value: '100% do $1000' },
@@ -150,7 +146,7 @@ const translations = {
       {
         icon: 'devil',
         title: 'Promka HELLBOY',
-        text: 'Ekskluzywny kod. Wpisz HELLBOY przy rejestracji — tylko 30 aktywacji.',
+        text: 'Ekskluzywny kod. Wpisz HELLBOY przy rejestracji.',
       },
       {
         icon: 'slot',
