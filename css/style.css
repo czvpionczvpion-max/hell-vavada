@@ -259,8 +259,13 @@ button { font-family: inherit; }
   background: var(--panel); border: 1px solid var(--line);
 }
 .strip-label { font-size: 0.66rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
-.strip-value { margin-top: 0.35rem; font-size: 1.35rem; font-weight: 800; letter-spacing: 0.02em; }
-.strip-value.accent { color: var(--gold); }
+.strip-value { margin-top: 0.35rem; font-size: 1.35rem; font-weight: 700; letter-spacing: 0.02em; }
+.strip-value.accent {
+  font-family: var(--font-display);
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: #ff4d6a;
+}
 
 .block { padding: clamp(2rem, 4vw, 3rem) 0 0; }
 .block--tight { padding-top: 1.3rem; }
@@ -279,15 +284,33 @@ button { font-family: inherit; }
 .bonus-card-hell { background: linear-gradient(180deg, rgba(255,35,74,.12), rgba(18,16,17,.92)); }
 .bonus-card:hover { transform: translateY(-3px); border-color: var(--line-2); }
 .bonus-card-tag { font-size: 0.68rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); }
-.bonus-card-title { margin: 0.45rem 0 0; font-size: 1.2rem; }
-.bonus-card-text { margin: 0.5rem 0 0; color: var(--ink-2); line-height: 1.55; font-size: 0.95rem; }
+.bonus-prizes { display: flex; flex-wrap: wrap; gap: 0.7rem 1.1rem; align-items: baseline; }
+.bonus-prize {
+  margin: 0.35rem 0 0;
+  font-family: var(--font-display);
+  font-size: clamp(3.2rem, 6vw, 4.4rem);
+  font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  color: #fff;
+  text-shadow: 0 0 24px rgba(255, 45, 74, 0.45);
+}
+.bonus-prize--gold { color: var(--gold); text-shadow: 0 0 22px rgba(228, 194, 122, 0.35); }
+.bonus-card-title { margin: 0.55rem 0 0; font-size: 1.05rem; font-weight: 600; color: var(--ink-2); }
+.bonus-card-text { margin: 0.55rem 0 0; color: var(--muted); line-height: 1.55; font-size: 0.92rem; }
 
 .promo-details { margin-top: 1.15rem; display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 0.7rem; }
 .promo-detail { padding: 1rem 1.05rem; border-radius: 14px; background: var(--panel); border: 1px solid var(--line); }
 .promo-detail-highlight { border-color: var(--line-2); background: linear-gradient(180deg, rgba(255,35,74,.14), rgba(18,16,17,.92)); }
 .promo-detail-label { font-size: 0.66rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
 .promo-detail-value { margin-top: 0.35rem; font-weight: 750; }
-.promo-detail-highlight .promo-detail-value { color: var(--gold); letter-spacing: 0.08em; font-size: 1.25rem; }
+.promo-detail-highlight .promo-detail-value {
+  font-family: var(--font-display);
+  color: #ff4d6a;
+  letter-spacing: 0.04em;
+  font-size: 1.45rem;
+  font-weight: 800;
+}
 
 .benefits-grid { margin-top: 1.15rem; display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 0.75rem; }
 .benefit-card {

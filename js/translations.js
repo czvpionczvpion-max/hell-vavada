@@ -28,10 +28,15 @@ const translations = {
       { icon: 'slot', label: 'Welcome FS', value: '100 FS' },
     ],
     bonusHellTag: 'Code HELLBOY',
+    bonusHellPrize: '20 FS',
+    bonusHellGame: 'Gates of Olympus 1000',
     bonusHellTitle: '20 FS · Gates of Olympus 1000',
     bonusHellText:
       'Enter code HELLBOY at registration — 20 free spins on Gates of Olympus 1000, x20 wager. Limited to 30 activations.',
     bonusWelcomeTag: 'New player',
+    bonusWelcomePrize: '100%',
+    bonusWelcomeFs: '100 FS',
+    bonusWelcomeGame: 'The Dog House',
     bonusWelcomeTitle: '100% + 100 FS · The Dog House',
     bonusWelcomeText:
       'New players get a 100% bonus on the first deposit (up to $1000) and 100 free spins on The Dog House.',
@@ -113,10 +118,15 @@ const translations = {
       { icon: 'slot', label: 'Spiny powitalne', value: '100 FS' },
     ],
     bonusHellTag: 'Kod HELLBOY',
+    bonusHellPrize: '20 FS',
+    bonusHellGame: 'Gates of Olympus 1000',
     bonusHellTitle: '20 FS · Gates of Olympus 1000',
     bonusHellText:
       'Wpisz kod HELLBOY przy rejestracji — 20 darmowych spinów na Gates of Olympus 1000, obrót x20. Limit 30 aktywacji.',
     bonusWelcomeTag: 'Nowy gracz',
+    bonusWelcomePrize: '100%',
+    bonusWelcomeFs: '100 FS',
+    bonusWelcomeGame: 'The Dog House',
     bonusWelcomeTitle: '100% + 100 FS · The Dog House',
     bonusWelcomeText:
       'Nowy gracz dostaje 100% od pierwszego depozytu (do $1000) oraz 100 darmowych spinów na The Dog House.',

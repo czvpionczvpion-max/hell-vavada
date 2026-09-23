@@ -42,7 +42,7 @@
           (stat, i) => `
         <div class="strip-cell reveal" style="transition-delay: ${i * 80}ms">
           <div class="strip-label">${stat.label}</div>
-          <div class="strip-value${i === 0 ? ' accent' : ''}">${stat.value}</div>
+          <div class="strip-value${/FS|%/.test(stat.value) ? ' accent' : ''}">${stat.value}</div>
         </div>
       `,
         )
@@ -54,7 +54,7 @@
       promoDetails.innerHTML = tr.promoDetails
         .map(
           (item, i) => `
-        <div class="promo-detail reveal${item.value === CONFIG.partner.promoCode ? ' promo-detail-highlight' : ''}" style="transition-delay: ${i * 60}ms">
+        <div class="promo-detail reveal${item.value === CONFIG.partner.promoCode || /FS|%/.test(item.value) ? ' promo-detail-highlight' : ''}" style="transition-delay: ${i * 60}ms">
           <div class="promo-detail-label">${item.label}</div>
           <div class="promo-detail-value">${item.value}</div>
         </div>
