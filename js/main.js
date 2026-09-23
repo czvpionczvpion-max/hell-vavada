@@ -1,7 +1,11 @@
 (function () {
   'use strict';
 
-  let lang = localStorage.getItem('lang') || 'pl';
+  if (localStorage.getItem('langDefault') !== 'pl') {
+    localStorage.setItem('lang', 'pl');
+    localStorage.setItem('langDefault', 'pl');
+  }
+  let lang = localStorage.getItem('lang') === 'en' ? 'en' : 'pl';
   let copiedPromo = false;
   let copyPromoTimeout = null;
 
