@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  let lang = localStorage.getItem('lang') || 'en';
+  let lang = localStorage.getItem('lang') || 'pl';
   let copiedPromo = false;
   let copyPromoTimeout = null;
 
@@ -65,7 +65,7 @@
         .map(
           (benefit, i) => `
         <div class="benefit-card reveal" style="transition-delay: ${i * 70}ms">
-          <span class="benefit-icon" aria-hidden="true">${benefit.icon}</span>
+          <span class="benefit-icon" aria-hidden="true"></span>
           <h3 class="benefit-title">${benefit.title}</h3>
           <p class="benefit-text">${benefit.text}</p>
         </div>
@@ -88,7 +88,7 @@
         .join('');
       timeline.innerHTML =
         stepsHtml +
-        `<div class="tstep reveal"><span class="tstep-n">!</span><p style="color: var(--accent-2)">${tr.promoCodeNote}</p></div>`;
+        `<div class="tstep reveal tstep-warn"><span class="tstep-n">!</span><p>${tr.promoCodeNote}</p></div>`;
     }
 
     updateCopyButtons();
@@ -101,6 +101,9 @@
       const key = btn.getAttribute('data-i18n');
       const label = key && tr[key] ? tr[key] : tr.copyPromo;
       btn.textContent = copiedPromo ? tr.copiedPromo : label;
+    });
+    document.querySelectorAll('.promo-code-box').forEach((box) => {
+      box.classList.toggle('is-copied', copiedPromo);
     });
   }
 
@@ -120,7 +123,7 @@
   }
 
   function initScrollReveal() {
-    const els = Array.from(document.querySelectorAll('.reveal'));
+    const els = Array.from(document.querySelectorAll('.reveal:not(.in)'));
     if (!('IntersectionObserver' in window) || !els.length) {
       els.forEach((el) => el.classList.add('in'));
       return;
@@ -143,6 +146,9 @@
     document.querySelectorAll('[data-brand]').forEach((el) => {
       el.textContent = CONFIG.brand;
     });
+    document.querySelectorAll('[data-partner-name]').forEach((el) => {
+      el.textContent = CONFIG.partner.name;
+    });
     document.querySelectorAll('[data-partner-link]').forEach((el) => {
       el.href = CONFIG.partner.siteUrl;
     });
@@ -150,17 +156,10 @@
       el.textContent = CONFIG.partner.promoCode;
     });
 
-    const partnerLogo = document.getElementById('partner-logo');
-    if (partnerLogo) {
-      partnerLogo.src = CONFIG.partner.logoPath;
-      partnerLogo.alt = CONFIG.partner.name;
-    }
-
-    const heroPartnerLogo = document.getElementById('hero-partner-logo');
-    if (heroPartnerLogo) {
-      heroPartnerLogo.src = CONFIG.partner.logoPath;
-      heroPartnerLogo.alt = CONFIG.partner.name;
-    }
+    document.querySelectorAll('[data-partner-logo]').forEach((el) => {
+      el.src = CONFIG.partner.logoPath;
+      el.alt = CONFIG.partner.name;
+    });
 
     const heroPhoto = document.getElementById('hero-photo');
     if (heroPhoto) {
@@ -177,6 +176,82 @@
     renderText();
   }
 
+  function bindStage() {
+    const stage = document.querySelector('.hero-stage');
+    if (!stage || !window.matchMedia('(pointer:fine)').matches) return;
+    stage.addEventListener('mousemove', (event) => {
+      const rect = stage.getBoundingClientRect();
+      const x = (event.clientX - rect.left) / rect.width - 0.5;
+      const y = (event.clientY - rect.top) / rect.height - 0.5;
+      stage.style.setProperty('--px', `${(x * 18).toFixed(1)}px`);
+      stage.style.setProperty('--py', `${(y * 12).toFixed(1)}px`);
+    });
+    stage.addEventListener('mouseleave', () => {
+      stage.style.setProperty('--px', '0px');
+      stage.style.setProperty('--py', '0px');
+    });
+  }
+
+  function initFire() {
+    const canvas = document.getElementById('fire-field');
+    if (!canvas || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    const sparks = [];
+    const count = Math.max(28, Math.min(52, Math.floor(window.innerWidth / 28)));
+
+    function makeSpark(fromBottom) {
+      const hot = Math.random();
+      return {
+        x: Math.random() * window.innerWidth,
+        y: fromBottom ? window.innerHeight + Math.random() * 40 : Math.random() * window.innerHeight,
+        r: hot > 0.88 ? 1.8 + Math.random() * 1.2 : 0.6 + Math.random() * 0.9,
+        vy: 0.22 + Math.random() * 0.55,
+        vx: (Math.random() - 0.5) * 0.4,
+        life: 0.35 + Math.random() * 0.65,
+        wobble: Math.random() * Math.PI * 2,
+        color: hot > 0.9 ? '255,248,230' : hot > 0.45 ? '255,166,54' : '255,72,24',
+      };
+    }
+
+    function resize() {
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      canvas.width = Math.floor(window.innerWidth * dpr);
+      canvas.height = Math.floor(window.innerHeight * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+
+    for (let i = 0; i < count; i += 1) sparks.push(makeSpark(false));
+    resize();
+    window.addEventListener('resize', resize);
+
+    function frame() {
+      ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+      sparks.forEach((spark) => {
+        spark.wobble += 0.03;
+        spark.x += Math.sin(spark.wobble) * 0.45 + spark.vx;
+        spark.y -= spark.vy;
+        spark.life -= 0.003;
+        if (spark.y < -12 || spark.life <= 0) Object.assign(spark, makeSpark(true));
+        const alpha = Math.max(0, Math.min(1, spark.life));
+        ctx.beginPath();
+        ctx.fillStyle = `rgba(${spark.color},${alpha})`;
+        ctx.arc(spark.x, spark.y, spark.r, 0, Math.PI * 2);
+        ctx.fill();
+        if (spark.r > 1.6) {
+          ctx.beginPath();
+          ctx.fillStyle = `rgba(255,252,244,${alpha})`;
+          ctx.arc(spark.x, spark.y, spark.r * 0.38, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      });
+      requestAnimationFrame(frame);
+    }
+
+    requestAnimationFrame(frame);
+  }
+
   function bindEvents() {
     document.querySelectorAll('.lang-toggle button').forEach((btn) => {
       btn.addEventListener('click', () => setLang(btn.dataset.lang));
@@ -184,10 +259,12 @@
     document.querySelectorAll('[data-copy-promo]').forEach((btn) => {
       btn.addEventListener('click', handleCopyPromo);
     });
+    bindStage();
   }
 
   document.addEventListener('DOMContentLoaded', () => {
     bindEvents();
+    initFire();
     setLang(lang);
   });
 })();

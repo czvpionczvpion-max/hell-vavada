@@ -1,14 +1,14 @@
 <!doctype html>
-<html lang="en">
+<html lang="pl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css" />
-    <title>HELL x VAVADA — Kod HELL</title>
+    <title>HELLBOY × VAVADA</title>
   </head>
   <body>
     <div class="app-shell">
@@ -16,18 +16,21 @@
         <span class="glow glow-a"></span>
         <span class="glow glow-b"></span>
         <span class="glow glow-c"></span>
-        <span class="ember ember-1"></span>
-        <span class="ember ember-2"></span>
-        <span class="ember ember-3"></span>
-        <span class="ember ember-4"></span>
-        <span class="ember ember-5"></span>
+        <span class="smoke smoke-1"></span>
+        <span class="smoke smoke-2"></span>
+        <span class="smoke smoke-3"></span>
+        <span class="flame-base"></span>
+        <canvas id="fire-field" class="fire-field"></canvas>
+        <span class="vignette"></span>
       </div>
 
       <header class="topbar">
         <a href="index.html" class="topbar-brand">
-          <span class="topbar-name" data-brand>HELL</span>
+          <span class="topbar-name" data-brand>HELLBOY</span>
           <span class="topbar-x">×</span>
-          <img id="partner-logo" src="assets/vavada-logo.webp" alt="VAVADA" class="topbar-partner" />
+          <span class="logo-crop logo-crop--bar">
+            <img data-partner-logo src="assets/vavada-logo.webp" alt="VAVADA" />
+          </span>
         </a>
 
         <div class="topbar-actions">
@@ -36,82 +39,80 @@
             <span class="btn-arrow" aria-hidden="true">→</span>
           </a>
           <div class="lang-toggle">
-            <button type="button" data-lang="en" class="active">EN</button>
-            <button type="button" data-lang="pl">PL</button>
+            <button type="button" data-lang="en">EN</button>
+            <button type="button" data-lang="pl" class="active">PL</button>
           </div>
         </div>
       </header>
 
       <main class="page">
         <section class="hero">
-          <div class="hero-stack reveal in">
-            <div class="hero-logo-wrap">
-              <img id="hero-partner-logo" src="assets/vavada-logo.webp" alt="VAVADA" class="hero-partner-logo" />
-            </div>
-
-            <span class="flow-arrow" aria-hidden="true"></span>
-
-            <p class="hero-lead" data-i18n="heroTagline"></p>
-
-            <span class="flow-arrow" aria-hidden="true"></span>
-
-            <div class="hero-cta">
-              <a href="#" data-partner-link target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg btn-claim">
-                <span data-i18n="joinPartner">ODBIERZ BONUSY</span>
-                <span class="btn-arrow" aria-hidden="true">→</span>
-              </a>
-            </div>
-
-            <span class="flow-arrow flow-arrow--muted" aria-hidden="true"></span>
-
-            <div class="promo-code-box">
-              <span class="promo-code-label" data-i18n="promoCodeLabel">Promo code</span>
-              <div class="promo-code-row">
-                <span class="promo-code-value" data-promo-code>HELL</span>
-                <button type="button" class="btn btn-primary btn-sm" data-copy-promo data-i18n="copyPromo">Copy code</button>
-              </div>
-            </div>
-
-            <div class="hero-pills" id="hero-pills"></div>
+          <div class="hero-brand reveal in">
+            <p class="eyebrow"><span data-i18n="heroLabel">Oficjalny partner</span></p>
+            <h1 class="logo-crop logo-crop--hero">
+              <img data-partner-logo src="assets/vavada-logo.webp" alt="VAVADA" />
+            </h1>
+            <p class="hero-cross">kod <strong data-promo-code>HELLBOY</strong></p>
           </div>
 
-          <div class="orb-wrap reveal in" style="transition-delay: 120ms">
-            <div class="orb">
-              <img id="hero-photo" src="assets/hell-photo.png" alt="hell" class="orb-photo" />
-              <span class="orb-ring"></span>
-              <span class="orb-flame" aria-hidden="true">🔥</span>
+          <div class="hero-grid">
+            <div class="hero-stack reveal in">
+              <p class="hero-lead" data-i18n="heroTagline"></p>
+
+              <div class="promo-code-box">
+                <span class="promo-code-label" data-i18n="promoCodeLabel">Twój kod</span>
+                <div class="promo-code-row">
+                  <span class="promo-code-value" data-promo-code>HELLBOY</span>
+                  <button type="button" class="btn btn-primary btn-sm" data-copy-promo data-i18n="copyPromo">Kopiuj kod</button>
+                </div>
+              </div>
+
+              <div class="hero-cta">
+                <a href="#" data-partner-link target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg btn-claim">
+                  <span data-i18n="joinPartner">ODBIERZ BONUSY</span>
+                  <span class="btn-arrow" aria-hidden="true">→</span>
+                </a>
+              </div>
+
+              <div class="hero-pills" id="hero-pills"></div>
+              <p class="age-note" data-i18n="legalNote">Tylko 18+. Graj odpowiedzialnie.</p>
             </div>
+
+            <figure class="portrait reveal in">
+              <img id="hero-photo" src="assets/hell-photo.png" alt="HELLBOY" />
+              <figcaption data-brand>HELLBOY</figcaption>
+            </figure>
           </div>
         </section>
 
-        <section class="strip reveal in" id="stats-strip"></section>
-
-        <div class="section-flow reveal in" aria-hidden="true">
-          <span class="flow-arrow"></span>
+        <div class="marquee" aria-hidden="true">
+          <div class="marquee-track">
+            <span>HELLBOY</span><span>VAVADA</span><span>20 FS</span><span>Gates of Olympus 1000</span><span>100%</span><span>The Dog House</span><span>100 FS</span><span>30 aktywacji</span>
+            <span>HELLBOY</span><span>VAVADA</span><span>20 FS</span><span>Gates of Olympus 1000</span><span>100%</span><span>The Dog House</span><span>100 FS</span><span>30 aktywacji</span>
+          </div>
         </div>
+
+        <section class="strip reveal in" id="stats-strip"></section>
 
         <section class="block block--tight">
           <div class="bonus-duo">
-            <div class="bonus-card bonus-card-hell reveal in">
-              <span class="bonus-card-tag" data-i18n="bonusHellTag">Promo HELL</span>
+            <article class="bonus-card bonus-card-hell reveal in">
+              <span class="bonus-card-tag" data-i18n="bonusHellTag">Kod HELLBOY</span>
               <h3 class="bonus-card-title" data-i18n="bonusHellTitle">20 FS · Gates of Olympus 1000</h3>
               <p class="bonus-card-text" data-i18n="bonusHellText"></p>
-            </div>
-            <div class="bonus-duo-connector" aria-hidden="true">
-              <span class="flow-arrow flow-arrow--right"></span>
-            </div>
-            <div class="bonus-card bonus-card-welcome reveal in" style="transition-delay: 90ms">
-              <span class="bonus-card-tag" data-i18n="bonusWelcomeTag">New player</span>
+            </article>
+            <article class="bonus-card bonus-card-welcome reveal in">
+              <span class="bonus-card-tag" data-i18n="bonusWelcomeTag">Nowy gracz</span>
               <h3 class="bonus-card-title" data-i18n="bonusWelcomeTitle">100% + 100 FS · The Dog House</h3>
               <p class="bonus-card-text" data-i18n="bonusWelcomeText"></p>
-            </div>
+            </article>
           </div>
         </section>
 
         <section class="block">
           <div class="block-head reveal in">
-            <span class="eyebrow" data-i18n="promoLabel">Your promo</span>
-            <h2 class="block-title" data-i18n="promoTitle">HELL — exclusive VAVADA offer</h2>
+            <span class="eyebrow" data-i18n="promoLabel">Twoja promka</span>
+            <h2 class="block-title" data-i18n="promoTitle">HELLBOY — ekskluzywna oferta VAVADA</h2>
             <p class="block-sub" data-i18n="promoSubtitle"></p>
           </div>
           <div class="promo-details" id="promo-details"></div>
@@ -119,21 +120,19 @@
 
         <section class="block">
           <div class="block-head reveal in">
-            <span class="eyebrow" data-i18n="benefitsLabel">Why VAVADA</span>
-            <h2 class="block-title" data-i18n="benefitsTitle">Perks with code HELL</h2>
+            <span class="eyebrow" data-i18n="benefitsLabel">Dlaczego VAVADA</span>
+            <h2 class="block-title" data-i18n="benefitsTitle">Korzyści z kodem HELLBOY</h2>
             <p class="block-sub" data-i18n="benefitsSubtitle"></p>
           </div>
-
           <div class="benefits-grid" id="benefits-grid"></div>
         </section>
 
         <section class="block">
           <div class="block-head reveal in">
-            <span class="eyebrow" data-i18n="stepsLabel">Start here</span>
-            <h2 class="block-title" data-i18n="stepsTitle">How to claim bonuses</h2>
+            <span class="eyebrow" data-i18n="stepsLabel">Start tutaj</span>
+            <h2 class="block-title" data-i18n="stepsTitle">Jak odebrać bonusy</h2>
           </div>
           <div class="timeline" id="steps-timeline"></div>
-
           <div class="hero-cta reveal in hero-cta--steps">
             <a href="#" data-partner-link target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg btn-claim">
               <span data-i18n="joinPartner">ODBIERZ BONUSY</span>
@@ -144,9 +143,12 @@
       </main>
 
       <footer class="footer">
-        <div>© <span id="footer-year"></span> <span data-brand>HELL</span> × VAVADA</div>
-        <p class="footer-legal" data-i18n="legalNote">18+ only. Gamble responsibly.</p>
-        <a href="privacy.html" data-i18n="privacyPolicy">Privacy policy</a>
+        <span class="logo-crop logo-crop--foot">
+          <img data-partner-logo src="assets/vavada-logo.webp" alt="VAVADA" />
+        </span>
+        <div>© <span id="footer-year"></span> <span data-brand>HELLBOY</span> × VAVADA</div>
+        <p class="footer-legal" data-i18n="legalNote">Tylko 18+. Graj odpowiedzialnie.</p>
+        <a href="privacy.html" data-i18n="privacyPolicy">Polityka prywatności</a>
       </footer>
     </div>
 
